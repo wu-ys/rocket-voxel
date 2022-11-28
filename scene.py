@@ -8,7 +8,7 @@ from math_utils import np_normalize, np_rotate_matrix
 import __main__
 
 
-VOXEL_DX = 1 / 64
+VOXEL_DX = 1 / 256
 SCREEN_RES = (1280, 720)
 TARGET_FPS = 30
 UP_DIR = (0, 1, 0)
@@ -112,7 +112,7 @@ class Camera:
 
 class Scene:
     def __init__(self, voxel_edges=0.06, exposure=3):
-        ti.init(arch=ti.vulkan)
+        ti.init(arch=ti.gpu)
         print(HELP_MSG)
         self.window = ti.ui.Window("Taichi Voxel Renderer",
                                    SCREEN_RES,
